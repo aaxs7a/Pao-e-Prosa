@@ -7,7 +7,8 @@ import {
   TouchableOpacity, 
   SafeAreaView, 
   Alert,
-  Image 
+  Image,
+  Linking // Adicionado para abrir o WhatsApp
 } from 'react-native';
 // Importamos o hook do carrinho para ler os itens salvos
 import { useCart } from '../context/CartContext'; 
@@ -15,13 +16,32 @@ import { useCart } from '../context/CartContext';
 export default function TabTwoScreen() {
   const { items, total, removeFromCart } = useCart();
 
-  const finalizarPedido = () => {
-    if (items.length === 0) {
-      Alert.alert("Carrinho Vazio", "Adicione seu produto antes de finalizar! 🥐");
-      return;
-    }
-    Alert.alert("Sucesso!", "Pedido recebido com sucesso! ☕");
-  };
+    // 1. Número da padaria (Troque pelo número real com DDD)
+const finalizarPedido = () => {
+  if (items.length === 0) {
+    Alert.alert("Carrinho Vazio", "Adicione seu produto antes de finalizar! 🥐");
+    return;
+  }
+
+  const telefone = "558196406363"; // Coloque o seu número para teste!
+  const listaProdutos = items
+    .map((item: any) => `• ${item.nome} - ${item.preco}`)
+    .join('\n');
+
+  const mensagem = `*NOVO PEDIDO - PÃO E PROSA* 🧺\n\n` +
+                   `Olá! Gostaria de fazer o seguinte pedido:\n\n` +
+                   `${listaProdutos}\n\n` +
+                   `*TOTAL:* R$ ${total.toFixed(2).replace('.', ',')}\n\n` +
+                   `_Por favor, confirme meu pedido!_`;
+
+  // Mudamos aqui: usamos o link "https" que o celular entende melhor que o "whatsapp://"
+  const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+
+  // Tentamos abrir direto. Se falhar, aí sim avisamos.
+  Linking.openURL(url).catch(() => {
+    Alert.alert("Erro", "Não foi possível abrir o WhatsApp automaticamente.");
+  });
+};
 
   return (
     <SafeAreaView style={styles.container}>
@@ -67,7 +87,7 @@ export default function TabTwoScreen() {
             <Text style={styles.totalValue}>R$ {total.toFixed(2).replace('.', ',')}</Text>
           </View>
           <TouchableOpacity style={styles.checkoutButton} onPress={finalizarPedido}>
-            <Text style={styles.checkoutText}>Finalizar Pedido</Text>
+            <Text style={styles.checkoutText}>Confirmar</Text>
           </TouchableOpacity>
         </View>
       )}

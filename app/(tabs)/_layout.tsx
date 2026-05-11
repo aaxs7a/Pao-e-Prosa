@@ -24,12 +24,15 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="carrinho" // Deve ser exatamente o nome do arquivo que você renomeou
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+          title: 'Carrinho',
+          tabBarIcon: ({ color }) => (
+      // Aqui você pode usar um ícone de carrinho diferente, se quiser
+          <IconSymbol size={28} name="cart.fill" color={color} />
+    ),
+  }}
+/>
     </Tabs>
   );
 }

@@ -16,18 +16,19 @@ import { useCart } from '../context/CartContext';
 export default function TabTwoScreen() {
   const { items, total, removeFromCart } = useCart();
 
-    // 1. Número da padaria (Troque pelo número real com DDD)
+    // 1. Número da padaria (Número real com DDD)
 const finalizarPedido = () => {
   if (items.length === 0) {
     Alert.alert("Carrinho Vazio", "Adicione seu produto antes de finalizar! 🥐");
     return;
   }
 
-  const telefone = "558196406363"; // Coloque o seu número para teste!
+  const telefone = "558199472821"; // Número teste
   const listaProdutos = items
     .map((item: any) => `• ${item.nome} - ${item.preco}`)
     .join('\n');
 
+  // Função para colar a mensagem do pedido pronta ao abrir o whatsapp
   const mensagem = `*NOVO PEDIDO - PÃO E PROSA* 🧺\n\n` +
                    `Olá! Gostaria de fazer o seguinte pedido:\n\n` +
                    `${listaProdutos}\n\n` +

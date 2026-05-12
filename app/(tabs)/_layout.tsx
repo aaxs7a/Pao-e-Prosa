@@ -19,16 +19,16 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Home',  // Aqui está o ícone da casinha na sidebar do app na parte inferior da tela "home"
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="carrinho" // Deve ser exatamente o nome do arquivo que você renomeou
+        name="carrinho"
         options={{
           title: 'Carrinho',
           tabBarIcon: ({ color }) => (
-      // Aqui você pode usar um ícone de carrinho diferente, se quiser
+      // Aqui fica o ícone de carrinho da sidebar do app ao lado direito da home
           <IconSymbol size={28} name="cart.fill" color={color} />
     ),
   }}

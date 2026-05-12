@@ -52,7 +52,7 @@ export default function HomeScreen() {
 
   const handleAddDestaque = (item: any) => {
     addToCart(item);
-    Alert.alert("Oba!", `${item.nome} foi para o carrinho! 🧺`);
+    Alert.alert("Enviado!", `${item.nome} foi para o carrinho! 🧺`);
   };
 
   return (
@@ -140,29 +140,112 @@ function CategoryItem({ emoji, label, onPress }: { emoji: string; label: string;
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FAF9F6' },
-  header: { padding: 20, marginTop: 10 },
-  greeting: { fontSize: 14, color: '#8B4513', fontWeight: '500' },
-  title: { fontSize: 32, fontWeight: 'bold', color: '#4A2C2A' },
-  carouselContainer: { height: 220, marginVertical: 10 },
-  bannerCard: { width: width - 40, marginHorizontal: 20, height: 200, borderRadius: 20, overflow: 'hidden' },
-  image: { width: '100%', height: '100%', position: 'absolute' },
-  overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.3)', justifyContent: 'flex-end', padding: 20 },
-  bannerTitle: { color: '#FFF', fontSize: 22, fontWeight: 'bold' },
-  bannerSub: { color: '#FFF', fontSize: 14 },
-  section: { marginTop: 10 },
-  sectionTitle: { fontSize: 20, fontWeight: 'bold', color: '#4A2C2A', marginBottom: 15, marginLeft: 20 },
-  categoriesScroll: { paddingLeft: 20, paddingRight: 10 },
-  catContainer: { alignItems: 'center', marginRight: 20 },
-  catCircle: { 
-    width: 65, height: 65, borderRadius: 35, backgroundColor: '#FFF', 
-    alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F5DEB3',
-    shadowColor: "#000", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 3, elevation: 3
-  },
-  catLabel: { marginTop: 8, fontSize: 12, color: '#5D4037', fontWeight: '600' },
+ container: {
+     flex: 1, 
+     backgroundColor: '#FAF9F6' 
+},
+  
+header: {
+     padding: 20, 
+     marginTop: 10 
+},
+  
+greeting: { 
+    fontSize: 14, 
+    color: '#8B4513', 
+    fontWeight: '500' 
+},
+  
+title: { 
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#4A2C2A'
+},
+  
+carouselContainer: {
+    height: 220,
+    marginVertical: 10
+},
+  
+bannerCard: {
+    width: width - 40,
+    marginHorizontal: 20,
+    height: 200,
+    borderRadius: 20,
+    overflow: 'hidden'
+},
+  
+image: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute'
+},
+  
+overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    justifyContent: 'flex-end',
+    padding: 20
+},
+  
+bannerTitle: {
+    color: '#FFF',
+    fontSize: 22,
+    fontWeight: 'bold'
+},
+  
+bannerSub: {
+    color: '#FFF',
+    fontSize: 14
+},
+  
+section: {
+    marginTop: 10
+},
+  
+sectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#4A2C2A',
+    marginBottom: 15,
+    marginLeft: 20
+},
+  
+categoriesScroll: {
+    paddingLeft: 20,
+    paddingRight: 10 
+},
+  
+catContainer: {
+    alignItems: 'center',
+    marginRight: 20
+},
+  
+catCircle: { 
+  width: 65,
+  height: 65,
+  borderRadius: 35,
+  backgroundColor: '#FFF', 
+  alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F5DEB3',
+  shadowColor: "#000",
+  
+ shadowOffset: {
+  width: 0,
+  height: 2
+ },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 3
+ },
+  
+ catLabel: { marginTop: 8, 
+    fontSize: 12, 
+    color: '#5D4037', 
+    fontWeight: '600' 
+ },
   
   // Estilo da Listra Marrom Divisora
-separator: {
+  separator: {
     height: 3,
     backgroundColor: '#4A2C2A',
     marginHorizontal: 20,
@@ -183,10 +266,28 @@ separator: {
     elevation: 3,
     paddingBottom: 10,
   },
-  imgDestaque: { width: '100%', height: 100 },
-  infoDestaque: { padding: 10 },
-  nomeDestaque: { fontSize: 14, fontWeight: 'bold', color: '#4A2C2A' },
-  precoDestaque: { fontSize: 14, color: '#8B4513', marginTop: 2 },
+  
+  imgDestaque: {
+    width: '100%',
+    height: 100
+  },
+  
+  infoDestaque: {
+    padding: 10
+  },
+  
+  nomeDestaque: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#4A2C2A'
+  },
+  
+  precoDestaque: {
+    fontSize: 14,
+    color: '#8B4513',
+    marginTop: 2
+  },
+  
   addButton: {
     backgroundColor: '#4A2C2A',
     marginHorizontal: 10,
@@ -195,5 +296,10 @@ separator: {
     alignItems: 'center',
     marginTop: 5,
   },
-  addButtonText: { color: '#FFF', fontSize: 12, fontWeight: 'bold' },
+  
+  addButtonText: {
+    color: '#FFF',
+    fontSize: 12,
+    fontWeight: 'bold'
+  },
 });

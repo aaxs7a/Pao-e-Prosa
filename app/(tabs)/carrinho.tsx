@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#F5DEB3'
   },
+  
   title: { fontSize: 28, fontWeight: 'bold', color: '#4A2C2A' },
   listContent: { padding: 20 },
   cartItem: { 
@@ -121,6 +122,7 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 3
   },
+  
   itemThumb: { width: 50, height: 50, borderRadius: 10 },
   itemInfo: { flex: 1, marginLeft: 15 },
   itemName: { fontSize: 16, fontWeight: 'bold', color: '#4A2C2A' },
@@ -138,6 +140,7 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     elevation: 20
   },
+  
   totalRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 },
   totalLabel: { fontSize: 18, color: '#4A2C2A' },
   totalValue: { fontSize: 24, fontWeight: 'bold', color: '#8B4513' },
@@ -147,6 +150,7 @@ const styles = StyleSheet.create({
     borderRadius: 15, 
     alignItems: 'center' 
   },
+  
   checkoutText: { color: '#FFF', fontSize: 18, fontWeight: 'bold' },
   emptyContainer: { alignItems: 'center', marginTop: 100 },
   emptyEmoji: { fontSize: 60, marginBottom: 10 },
